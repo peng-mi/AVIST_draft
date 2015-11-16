@@ -1,0 +1,113 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyperFirstAtBeginDocument{\AtBeginDocument}
+\HyperFirstAtBeginDocument{\ifx\hyper@anchor\@undefined
+\global\let\oldcontentsline\contentsline
+\gdef\contentsline#1#2#3#4{\oldcontentsline{#1}{#2}{#3}}
+\global\let\oldnewlabel\newlabel
+\gdef\newlabel#1#2{\newlabelxx{#1}#2}
+\gdef\newlabelxx#1#2#3#4#5#6{\oldnewlabel{#1}{{#2}{#3}}}
+\AtEndDocument{\ifx\hyper@anchor\@undefined
+\let\contentsline\oldcontentsline
+\let\newlabel\oldnewlabel
+\fi}
+\fi}
+\global\let\hyper@last\relax 
+\gdef\HyperFirstAtBeginDocument#1{#1}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\citation{weaver2008}
+\citation{weaver2010}
+\citation{tab}
+\citation{Wesley}
+\citation{2013-immens}
+\citation{Canny}
+\citation{IBM2011}
+\citation{harvard}
+\citation{OFC}
+\citation{HDFS}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related Work}{1}{section.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}The Exploration of Multidimensional Datasets}{1}{subsection.2.1}}
+\citation{2013-immens}
+\citation{Abadi:2008}
+\citation{2013-immens}
+\citation{volume}
+\citation{Pawliczek}
+\citation{polaris}
+\citation{Fekete}
+\citation{animated}
+\citation{weaver2010}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Big Data Management}{2}{subsection.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.3}The GPU Acceleration}{2}{subsection.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Big Data Exploration}{2}{subsection.2.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}The GPU-Centric Design}{2}{section.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.1}Design Principle}{2}{subsection.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.2}The GPU-Centric Design}{2}{subsection.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces  The GPU-centric design: user interactions are transfered from the CPU to the GPU. Data storage and computation are on the GPU. }}{2}{figure.1}}
+\newlabel{fig:architecture}{{1}{2}{The GPU-centric design: user interactions are transfered from the CPU to the GPU. Data storage and computation are on the GPU}{figure.1}{}}
+\citation{weaver2010cross}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.3}Data Storage}{3}{subsection.3.3}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Data Preprocessing Compression}}{3}{table.1}}
+\newlabel{preprocessing}{{1}{3}{Data Preprocessing Compression}{table.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {3.4}Data Computation}{3}{subsection.3.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces  The data dependency graph: rectangles represent the data and ovals are the parallel computations. Data filters are generated in the CPU side and transformed to the GPU. All data and computations are done on the GPU. }}{3}{figure.2}}
+\newlabel{fig:datagraph}{{2}{3}{The data dependency graph: rectangles represent the data and ovals are the parallel computations. Data filters are generated in the CPU side and transformed to the GPU. All data and computations are done on the GPU}{figure.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}AVIST}{4}{section.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}MVC Pattern}{4}{subsection.4.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces  This figure shows the MVC design of AVIST. The dash lines show the visual operations and feedbacks between user interactions and data views. The solid lines describe the data path. First, filters trigger data model , then update the data views. }}{4}{figure.3}}
+\newlabel{fig:mvc}{{3}{4}{This figure shows the MVC design of AVIST. The dash lines show the visual operations and feedbacks between user interactions and data views. The solid lines describe the data path. First, filters trigger data model , then update the data views}{figure.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Data Transformation}{4}{subsection.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.1}Data filtering}{4}{subsubsection.4.2.1}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces  Data transformations from raw data to filtered dataset.}}{4}{figure.4}}
+\newlabel{fig:dataTran1}{{4}{4}{Data transformations from raw data to filtered dataset}{figure.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.2}Data processing}{4}{subsubsection.4.2.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces  Data transformations from filtered data into visual primitives.}}{4}{figure.5}}
+\newlabel{fig:dataTran2}{{5}{4}{Data transformations from filtered data into visual primitives}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces  This figure shows data transformations from compact item lists to rendering data in parallel coordinate views. The data transformations are separated into two parts: vertex and edge.}}{5}{figure.6}}
+\newlabel{fig:dataTran3}{{6}{5}{This figure shows data transformations from compact item lists to rendering data in parallel coordinate views. The data transformations are separated into two parts: vertex and edge}{figure.6}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.3}Data rendering}{5}{subsubsection.4.2.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Correlated Data Views}{5}{subsection.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4}User Interactions}{5}{subsection.4.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces  The control panel of AVIST. Three filters (\textit  {highlight filter, exclusive filter} and \textit  {inclusive filter}) with three modes (\textit  {solo} mode, \textit  {and} mode, and \textit  {or} mode) are provided. }}{5}{figure.7}}
+\newlabel{fig:control}{{7}{5}{The control panel of AVIST. Three filters (\textit {highlight filter, exclusive filter} and \textit {inclusive filter}) with three modes (\textit {solo} mode, \textit {and} mode, and \textit {or} mode) are provided}{figure.7}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.1}Animation}{5}{subsubsection.4.4.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.2}Filtering}{5}{subsubsection.4.4.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.4.3}Capacities}{5}{subsubsection.4.4.3}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Performance}{6}{section.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces  The performance of AVIST. The scatter plots show the relationship between number of queried data records and the performance (milliseconds). From the top left to the bottom right are the performances of filtered data, histogram view, time-series view and parallel coordinate views (four axes). }}{6}{figure.8}}
+\newlabel{fig:performance}{{8}{6}{The performance of AVIST. The scatter plots show the relationship between number of queried data records and the performance (milliseconds). From the top left to the bottom right are the performances of filtered data, histogram view, time-series view and parallel coordinate views (four axes)}{figure.8}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces  The performance comparison between CPU and GPU of parallel coordinate plots (two axes) }}{6}{figure.9}}
+\newlabel{fig:cmp}{{9}{6}{The performance comparison between CPU and GPU of parallel coordinate plots (two axes)}{figure.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Usage Scenario}{6}{section.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Network Flow Analysis}{6}{subsection.6.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2}International Trade Analysis}{6}{subsection.6.2}}
+\citation{2013-immens}
+\citation{Zaharia:2010}
+\@writefile{lof}{\contentsline {figure}{\numberline {10}{\ignorespaces  This figure shows a usage scenario how AVIST helps analysts for visual exploration of the large network logs. Seven steps are presented in this figure, and Section 6.1 gives more detailed explanations. }}{7}{figure.10}}
+\newlabel{fig:vast}{{10}{7}{This figure shows a usage scenario how AVIST helps analysts for visual exploration of the large network logs. Seven steps are presented in this figure, and Section 6.1 gives more detailed explanations}{figure.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Lessons Learned}{7}{section.7}}
+\bibstyle{abbrv}
+\bibdata{template}
+\bibcite{tab}{1}
+\bibcite{volume}{2}
+\bibcite{Abadi:2008}{3}
+\bibcite{Canny}{4}
+\bibcite{Fekete2013}{5}
+\bibcite{Fekete}{6}
+\bibcite{animated}{7}
+\bibcite{IBM2011}{8}
+\bibcite{harvard}{9}
+\bibcite{2013-immens}{10}
+\bibcite{Pawliczek}{11}
+\bibcite{OFC}{12}
+\bibcite{HDFS}{13}
+\bibcite{polaris}{14}
+\bibcite{weaver2008}{15}
+\bibcite{weaver2010}{16}
+\bibcite{weaver2010cross}{17}
+\@writefile{lof}{\contentsline {figure}{\numberline {11}{\ignorespaces  This figure shows the usage scenario that analysts use AVIST to visual explore big international trade transactions. The detailed discussions are presented in Section 6.2.}}{8}{figure.11}}
+\newlabel{fig:network}{{11}{8}{This figure shows the usage scenario that analysts use AVIST to visual explore big international trade transactions. The detailed discussions are presented in Section 6.2}{figure.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {8}Conclusions}{8}{section.8}}
+\bibcite{Wesley}{18}
+\bibcite{Zaharia:2010}{19}

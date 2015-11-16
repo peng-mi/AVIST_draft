@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: template2014.aux
+The style file: abbrv.bst
+Database file #1: template.bib
+Warning--to sort, need author or key in tab
+Warning--to sort, need editor, organization, or key in volume
+Warning--empty author in tab
+Warning--empty journal in tab
+Warning--empty year in tab
+You've used 19 entries,
+            2118 wiz_defined-function locations,
+            622 strings with 7117 characters,
+and the built_in function-call counts, 6879 in all, are:
+= -- 712
+> -- 279
+< -- 7
++ -- 114
+- -- 92
+* -- 473
+:= -- 1081
+add.period$ -- 60
+call.type$ -- 19
+change.case$ -- 102
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 292
+empty$ -- 560
+format.name$ -- 92
+if$ -- 1496
+int.to.chr$ -- 0
+int.to.str$ -- 19
+missing$ -- 19
+newline$ -- 94
+num.names$ -- 34
+pop$ -- 111
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 206
+stack$ -- 0
+substring$ -- 439
+swap$ -- 78
+text.length$ -- 7
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 73
+warning$ -- 5
+while$ -- 67
+width$ -- 21
+write$ -- 218
+(There were 5 warnings)

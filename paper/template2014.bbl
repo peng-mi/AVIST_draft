@@ -1,0 +1,115 @@
+\begin{thebibliography}{10}
+
+\bibitem{tab}
+Tableau software http://www.tableau.com/.
+
+\bibitem{volume}
+{\em A Survey of GPU-Based Large-Scale Volume Visualization}, Swansea, UK,
+  2014.
+
+\bibitem{Abadi:2008}
+D.~J. Abadi, S.~R. Madden, and N.~Hachem.
+\newblock Column-stores vs. row-stores: How different are they really?
+\newblock In {\em Proceedings of the 2008 ACM SIGMOD International Conference
+  on Management of Data}, SIGMOD '08, pages 967--980, New York, NY, USA, 2008.
+  ACM.
+
+\bibitem{Canny}
+J.~Canny and H.~Zhao.
+\newblock Big data analytics with small footprint: Squaring the cloud.
+\newblock In {\em Proceedings of the 19th ACM SIGKDD International Conference
+  on Knowledge Discovery and Data Mining}, KDD '13, pages 95--103, New York,
+  NY, USA, 2013. ACM.
+
+\bibitem{Fekete2013}
+J.~D. Fekete.
+\newblock {Visual analytics infrastructures: From data management to
+  exploration}.
+\newblock {\em Computer}, 46(7):22--29, 2013.
+
+\bibitem{Fekete}
+J.-D. Fekete and C.~Plaisant.
+\newblock Interactive information visualization of a million items.
+\newblock In {\em Proceedings of the IEEE Symposium on Information
+  Visualization (InfoVis'02)}, INFOVIS '02, pages 117--, Washington, DC, USA,
+  2002. IEEE Computer Society.
+
+\bibitem{animated}
+J.~Heer and G.~Robertson.
+\newblock Animated transitions in statistical data graphics.
+\newblock {\em IEEE Trans. Visualization \& Comp. Graphics (Proc. InfoVis)},
+  13:1240--1247, 2007.
+
+\bibitem{IBM2011}
+IBM, P.~Zikopoulos, and C.~Eaton.
+\newblock {\em Understanding Big Data: Analytics for Enterprise Class Hadoop
+  and Streaming Data}.
+\newblock McGraw-Hill Osborne Media, 1st edition, 2011.
+
+\bibitem{harvard}
+S.~Idreos, O.~Papaemmanouil, and S.~Chaudhuri.
+\newblock Overview of data exploration techniques.
+\newblock In {\em Proceedings of the ACM SIGMOD International Conference on
+  Management of Data, Tutorial}, Melbourne, Australia, 2015.
+
+\bibitem{2013-immens}
+Z.~Liu, B.~Jiang, and J.~Heer.
+\newblock immens: Real-time visual querying of big data.
+\newblock {\em Computer Graphics Forum (Proc. EuroVis)}, 32, 2013.
+
+\bibitem{Pawliczek}
+P.~Pawliczek, W.~Dzwinel, and D.~A. Yuen.
+\newblock Visual exploration of data by using multidimensional scaling on
+  multicore cpu, gpu, and mpi cluster.
+\newblock {\em Concurr. Comput. : Pract. Exper.}, 26(3):662--682, Mar. 2014.
+
+\bibitem{OFC}
+M.~Shih, Y.~Zhang, K.-L. Ma, J.~Sitaraman, , and D.~J. Mavriplis.
+\newblock Out-of-core visualization of time-varying hybrid-grid volume data.
+\newblock In {\em Proceedings of LDAV}, November 2014.
+
+\bibitem{HDFS}
+K.~Shvachko, H.~Kuang, S.~Radia, and R.~Chansler.
+\newblock The hadoop distributed file system.
+\newblock In {\em Proceedings of the 2010 IEEE 26th Symposium on Mass Storage
+  Systems and Technologies (MSST)}, MSST '10, pages 1--10, Washington, DC, USA,
+  2010. IEEE Computer Society.
+
+\bibitem{polaris}
+C.~Stolte, D.~Tang, and P.~Hanrahan.
+\newblock Polaris: A system for query, analysis, and visualization of
+  multidimensional databases.
+\newblock {\em Commun. ACM}, 51(11):75--84, Nov. 2008.
+
+\bibitem{weaver2008}
+C.~Weaver.
+\newblock Multidimensional visual analysis using cross-filtered views.
+\newblock In {\em Visual Analytics Science and Technology, 2008. VAST'08. IEEE
+  Symposium on}, pages 163--170. IEEE, 2008.
+
+\bibitem{weaver2010}
+C.~Weaver.
+\newblock Cross-filtered views for multidimensional visual analysis.
+\newblock {\em Visualization and Computer Graphics, IEEE Transactions on},
+  16(2):192--204, 2010.
+
+\bibitem{weaver2010cross}
+C.~Weaver.
+\newblock Cross-filtered views for multidimensional visual analysis.
+\newblock {\em Visualization and Computer Graphics, IEEE Transactions on},
+  16(2):192--204, 2010.
+
+\bibitem{Wesley}
+R.~Wesley, M.~Eldridge, and P.~T. Terlecki.
+\newblock An analytic data engine for visualization in tableau.
+\newblock In {\em Proceedings of the 2011 ACM SIGMOD International Conference
+  on Management of Data}, SIGMOD '11, pages 1185--1194, New York, NY, USA,
+  2011. ACM.
+
+\bibitem{Zaharia:2010}
+M.~Zaharia, M.~Chowdhury, M.~J. Franklin, S.~Shenker, and I.~Stoica.
+\newblock Spark: Cluster computing with working sets.
+\newblock In {\em Proceedings of the 2Nd USENIX Conference on Hot Topics in
+  Cloud Computing}, HotCloud'10, pages 10--10. USENIX Association, 2010.
+
+\end{thebibliography}

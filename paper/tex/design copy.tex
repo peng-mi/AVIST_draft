@@ -1,0 +1,177 @@
+\section{Design Analysis}
+We emphasize interactively visual exploration of large time-series and multidimensional datasets. 
+We believe that big data VA systems need to support analysts \textsl{finding a needle in haystack}, which means that VA systems should provide \textsl{dynamic querying and drill down filtering} functions to help analysts find outliers and identify pattens. 
+Based these goals, we summarize  related techniques and present their tradeoff analysis. 
+
+\subsection{Data Processing}
+%First, we focus on data processing. We want to achieve both high performance and support for ad hoc querying in our VA system.  
+Data processing is important for efficiently organizing data to support interactive exploratory analysis. Based on the survey, we summarize four techniques which are widely used to handle big data.
+
+1) \textbf{In-memory database} is a popular technique in commercial big data VA products. 
+Compared with traditional on-disk databases, in-memory databases are faster at accessing data by eliminating disk seeking time
+%, which guarantees faster and more predictable performance. 
+While the memory capability constrains  data size, solutions, such as hybrid database systems or distributed in-memory architectures~\cite{Kallman:2008},  are directions for future research.  
+
+2) \textbf{Data cube}~\cite{gray} is an aggregation operator for On-Line Analytical Processing (OLAP) in the context of data warehousing. 
+However, cube size explodes as data dimensionality increases, which has a significant storage requirement than original datasets. 
+Moreover, data cube needs heavily pre-computing for aggregation and hardly support  querying down to individual record.
+
+3) \textbf{Approximated and incremental queries} are promising techniques for big data analysis. 
+Fisher et al.~\cite{FisherCHI2012} show the utility of the approximated queries by interviewing three teams of analysts.
+They conclude that incremental query for data analysis is tractable and desirable, analysts can obtain immediate feedback by incremental queries to refine their results, even further to explore new avenues.  
+
+4) \textbf{Data reduction} refers to methods for reducing big data with small data, which includes filtering, sampling, aggregation and modeling. 
+Liu et al.~\cite{2013-immens} survey data reduction techniques and summarize that both sampling strategies and model based abstractions require prior knowledge and preprocessing of big data. They argue that filtering and aggregation techniques are more effective in some cases, so they choose data cube based aggregation to support  visual query of big data. However, imMens is constrained by per-aggregated data, which cannot support dynamic  filtering. 
+
+
+\begin{table}[ht]
+	\small
+	\caption{Database Design Analysis}
+	\begin{center}
+		\begin{tabular}{|cc|c|c|}
+			\hline
+			\multicolumn{2}{|c|}{\textbf{Technique}} & \textbf{Pros} & \textbf{Cons} \\
+			\hline
+			\multicolumn{2}{|c|}{In-memory database} & Fast performance & Memory size limitation\\
+			\hline
+			
+			\multicolumn{2}{|c|}{	\multirow{3}{*}{Data cube} }& Fast performance  & Dimension scalability\\
+			& & Aggregation query  & Lack of drill down query \\
+			& & & pre-computing\\
+			\hline
+			
+			
+			
+			\multicolumn{2}{|c|}{Incremental Query} & Fast performance & Approximated query\\
+			\hline
+			
+			
+			\multicolumn{1}{|c|}{\multirow{5}{*}{Data Reduction}}& Sampling & Fast performance  & Prior-knowledge\\ 
+			& \multicolumn{1}{|c|}{Modeling}  & reduction & pre-computing \\  
+			\cline{2-4}
+			& \multicolumn{1}{|c|}{Filtering} & dynamic query & in-place computing\\ 
+			\cline{2-4}
+			& \multicolumn{1}{|c|}{\multirow{2}{*}{Aggregation}} & Fast performance & Lack of drill down query\\
+			& \multicolumn{1}{|c|}{} & reduction  & pre-computing\\
+			\hline
+			
+			
+			\hline
+		\end{tabular}
+	\end{center}
+	\label{tab:database}
+\end{table}
+
+
+
+Table~\ref{tab:database} shows a summary of these techniques.
+We believe that none of them can be ``one size fits all". Several techniques should be combined together to design a VA system. In AVIST, we store raw data in GPU memory (\textit{in-memory database}), use a data dependency graph for depicting data transformations (\textit{aggregation}) based on users' demands (\textit{dynamic queries}).
+%we are inspired by in-memory database, incremental query, filtering and aggregation. 
+
+%Table~\ref{tab:database} present  summaries of these techniques, which are the guides for designing VA systems. Actually no one  is ``one size fits all", several techniques should be combined together in a VA system. In AVIST system, we use in-memory database, incremental query, filtering and aggregation for analyzing big data. 
+%Our paper aims to support dynamic querying and drill down filtering, data cube is not our choice. 
+%Data sampling and modeling techniques need prior knowledge of the data, which are out of our options. 
+%So we choose the in-memory database, incremental queries, filtering and aggregation methods for designing VA system. 
+
+
+
+
+
+
+\subsection{Visualization and Interaction}
+%Second, we explore existing big data visualization and interaction techniques. Especially, we focus on visualization and  interaction of large high dimensional datasets.
+
+
+\subsubsection{Visualization}
+%The visualization techniques are very important for exploratory analysis system. 
+%We summarize major visualization techniques especially considering multidimensional data, which are listed as follows:
+We analyze three visualization techniques for exploratory analysis of time-series and multidimensional datasets for designing one view, multiple views and relationships between different views.
+
+1) \textbf{Parallel coordinate plots (PCPs)}~\cite{Inselberg} are a widely used technique for visual analysis  multidimensional data in one view,  which maps each point as a polyline among the parallel axes. 
+It scales very well with the number of data dimensions. 
+However, it may turn into visual clutters with the rapid growth in the size of datasets. Another consideration is the ordering of axes, which may impact the visual results.
+
+
+
+2) \textbf{Scatterplot matrix (SPLOM)}~\cite{ Elmqvist2008g} is a well-established technique to visually explore multidimensional datasets.
+It arranges scatter plots of all possible dimension combinations to visualize different aspects of datasets. 
+Thus, the number of scatter plots quadratically grows with  data dimensions and the drawing area becomes smaller. 
+Over-plotting may happen by increasing the number of points, so analysts may be difficult to make decisions due to visual clutter. 
+
+3) \textbf{Coordinated and multiple views (CMVs)}~\cite{ Roberts} are widely used for exploratory analysis. 
+They allow users to see  data in various forms, manipulate the visual presentation in different ways,  and interact and coordinate interactions between multiple views.  
+Multidimensional datasets include different data types, which may need various visual presentations. Thus, CMVs are a appropriate design for visualizing multidimensional datasets.
+
+
+
+AVIST is built based on coordinate and multiple views. It currently includes histogram view (\textit{aggregation information}), dynamic view (\textit{history information}) and parallel coordinate plots (\textit{detailed information}). More data views can be flexibly added by incorporating the data dependency graph design. 
+%While we admit that we may not list all possible visualization techniques for multidimensional data, these three are the most important methods. In our VA system design,  we favor coordinated and multiple views, and parallel coordinate plots instead of scatterplot matrix. 
+
+\subsubsection{Interaction}
+AVIST highlights visual filtering and querying. Three interaction techniques are considered targeting large time-series and multidimensional datasets.
+
+ 
+%User can control the visual items by animation and interaction techniques. We list three common animation and interaction techniques for exploratory data analysis.
+
+1) \textbf{Brushing and linking} (\textit{multidimensional feature}) is used to explore tightly coupled data relationships by highlighting items in multiple views. 
+%imMens~\cite{2013-immens} is an example to highlight brushing and linking technique for visual querying big data. 
+Cross-filtering~\cite{weaver2010cross} generalizes the brushing and linking technique into a design pattern for fast and flexible  drilling down into fine grained relationships in multidimensional datasets. In AVIST, we couple brushing and linking with coordinate and multiple views. A data dependency graph is inspired by cross-filtering pattern for charactering the data flow.
+
+
+2) \textbf{Animation} (\textit{time-series feature}) is viewed as special filter based on time. 
+It automatically updates data items between time frames. During the frame transitions, temporal patterns can be revealed. 
+Compared with brushing and linking, which can be regarded as a space multiplexing technique, animation is a kind of  time multiplexing technique for visualizing data items at a regular pace.  AVIST  emphasizes animation for slicing data from time domain to reduce computation overhead. In addition, animation is also a good way for revealing temporal  patterns and trace history behaviors. 
+
+3) \textbf{Dynamic query} (\textit{big data feature}) means interactively filtering and displaying of the data items through successive interactions. Brushing and linking as well as animation as ``range-silder" are  general methods for dynamic queries. To explore the multidimensional datasets, more complex filters and queries need be investigated. We design and implement combined data filters in AVIST to support complex querying. Three different filters (\textit{highlight filters, exclusive filters and negative exclusive filters}) and three filter modes (\textit{solo mode, and mode, or mode}) can combine together to support complex set algebra for dynamic querying. More details about them are discussed in system design section.
+%Zhao et al.~\cite{zhao2013interactive} present a visual query language in PivotSlice to identify implicit and explicit relationship. Polaris \cite{stolte2002polaris} allows users to drag and drop visualizations based on its table algebra.
+
+%Other interaction techniques may also be effective for big data visualization. We believe that the listed three are crucial for exploring big data. We want to incorporate these techniques in our VA system to achieve dynamic querying to help users drilling down each record.
+
+
+\subsection{Parallel Computing}
+
+Based on our review of parallel computing techniques for VA systems, we choose GPUs to parallelize data processing, rather than distributed system. The reasons of this as as follows.
+
+Firstly, previous MapReduce based systems are designed for long batch jobs instead of small dynamic queries~\cite{Dean:2008}. Spark~\cite{Zaharia:2010} presents resilient distributed datasets  for reusing a previous working set  of data based on MapReduce, which boosts the performance of interactive analysis applications. However, a key concept of MapReduce based systems is shipping the computation to a cluster of nodes, ignoring large data shipping between nodes.  We argue that visual analysis of big data needs shipping large visual primitives data from different nodes into GPU memory. This IO cost may become a bottleneck of VA systems. Compared with distributed systems, AVIST highlights GPU parallel processing and rendering simultaneously. This kind of design avoids 1) data shipping between nodes and 2) data communications between GPU memory and main memory.  However, AVIST is limited by current GPU memory capability. We acknowledges this, and believe that AVIST can handle more with GPU technology increases. 
+%Our paper demonstrate that  AVIST system as a proof of concept shows that GPU based big data visual analysis is a feasible solution.     
+%This section gives a brief trade-off discussions of parallel platforms for designing a VA system. 
+
+%\textbf{Distributed systems} are becoming a hot topic for big data visual analysis, and many distributed VA systems have already deployed, such as Google's Dremel~\cite{melnik2010dremel}. However most of them are based on Map-Reduce scheme~\cite{Dean2008}, that they are designed for large, long-running bath jobs  and are incapable of many small, short and increasing interactive queries~\cite{Chen:2012}. To make best use of distributed systems, Dremel~\cite{melnik2010dremel} contributes a novel data model, which is a columnar representation of nested data for dynamic query. Moreover, Starfish~\cite{herodotou} characterizes the work load of distributed systems and applies optimization for scheduling jobs to achieve better performance. However, such kinds of improvements focus on shipping the computation to a cluster of processing nodes, while shipping large data in the cluster increases I/O costs, which may not achieve real time performance for interaction with big data. 
+
+%Such systems for visual analysis big data are mainly based on data aggregation techniques, which needs high computing of big data and small statistical results. When user want to see million items, the network throughput can not afford real time transforming such big data from cloud database into user's screen.      
+
+%\textbf{GPUs} are another potential solution for analyzing big data. Besides their powerful rendering capability, GPUs feature the general purpose computing. 
+%For example, Fekete et al.~\cite{Fekete:2002} suggested utilizing GPU rendering power to achieve the redisplay speed required for smooth interaction of big data. When user triggers a series of queries, all data items are send to the GPU for fast rendering.  imMens~\cite{2013-immens} makes a further step for visually querying big data based on GPU parallel computing. However, GPU based solutions suffers limitations, such as limited GPU memory size, copying  data back and forth between CPU and GPU, which increases I/O costs. 
+
+Table~\ref{tech} presents a brief summary of all mentioned techniques we have incorporated into the design  AVIST.   
+
+%Generally, parallel computing is promising for big data VA system and both distributed systems and GPUs are the feasible solutions. In our system design, we leverage the power of GPUs for fast rendering and parallel computing. We acknowledge the shortcomings of GPUs, and try to overcome them to achieve good performance. Table~\ref{tech} shows the summary of all mentioned techniques we try to incorporate into our VA system.   
+
+
+\begin{table}[h]
+	\small
+	\caption{Summary of VA system techniques}
+	\label{tech}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		\textbf{Database}                                                                          & \textbf{Visualization}                                      & \textbf{Interaction}                                                                             & \textbf{GPU}                                                                         \\ \hline
+		\begin{tabular}[c]{@{}c@{}}In-memory\\ Incremental Query\\ Filtering \\ Aggregation\end{tabular} & \begin{tabular}[c]{@{}c@{}}PCPs\\ CMVs\end{tabular} & \begin{tabular}[c]{@{}c@{}}Brushing \& Linking\\ Animation\\ Dynamic Query\end{tabular} & \begin{tabular}[c]{@{}c@{}}Fast Rendering\\ GPU Computing\end{tabular} \\ \hline
+	\end{tabular}
+\end{table}
+
+%In this section, we first emphasis our design principles for exploratory big data visual analysis system, then we analyze the related requirement based on the design principles. //design requirements
+
+%\subsection{Design Principle}
+%To support exploratory data analysis, we emphasis the following principles 
+
+
+%\textbf{P\RN{1}: Finding a needle in haystack } raw data, reduction, sampling , approximated results is useless 
+
+
+
+%\textbf{P\RN{2}: Real time visualizating million nodes on desktop compupter} need GPU computing and rendering, latency and data throughput.
+
+
+%The first challenge for big data visual analysis system is intensive computing scaling to big data size. Previous research proposed different methods, such as data reduction and sampling, approximate database query, incremental computing and parallel processing. While we aim to help users to \textbf{find a needle in haystack} for exploratory data analysis, we adopt the \textbf{incremental computing and parallel processing} ideas, abandoning the data reduction and approximated query methods.
+
+%Another consider issues for designing big data system is the low latency and high throughput of big data.   abstract

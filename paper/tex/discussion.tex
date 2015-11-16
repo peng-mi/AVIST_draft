@@ -1,0 +1,24 @@
+\section{Lessons Learned}
+
+ In this section, we summarize some lessons learned for designing and implementing AVIST. We discuss the trade-offs of choosing different technique strategies for big data visual analysis.
+ 
+
+\begin{itemize}
+	\item \textit{Pre-aggregation vs Aggregation on demand}: imMens~\cite{2013-immens} is a pre-aggregation big data visual querying system based on data cube technique. However, it is constraint by 1) long preprocessing time, 2) huge memory requirement (derived data may be larger than original data), and 3) lacking flexible filterings and queries. In contrast, AVIST emphasizes data aggregation on demand, and data storage and computation are done on the GPU to gain performance. Hence, AVIST can provide flexible filtering interactions. We believe that aggregation on demand techniques is a better way for handling the growing datasets.
+	
+	\item \textit{Row-Oriented vs Column-Oriented}:
+	These are two basic data management methods, and both of them have pros and cons. In the ``big data" era, column based method gains more attentions, because columnar databases have two features. Firstly, it has better compression ratio by storing similar things together, and reduce IO cost when transformed from disk to memory. Secondly, it support high level analytical workload very well. While row based database is better for OLTP applications, which supports to  read and write small transactions frequently. The pros of row oriented format includes 1) retrieving small data to find a ``needle in a haystack"; 2) analyzing streaming data with increased datasets. In our paper, we favor row oriented method considering our exploration orientated tasks (e.g., gaining fine-grained data details). 
+	
+	\item \textit{Exploration-Driven vs Analytical-Driven}:
+	 Exploration driven applications emphasize more ``unknow-unknow" knowledge discovery, so they highlight  the data exploration and interaction techniques.
+	  However, analytical driven applications focus on ``know-unknow" insight synthesizing, and  they care about integrating statistics and machine learning techniques with human interactions and visual representations.
+	  AVIST is an exploration driven tool targeting on visually exploring time series and multi dimensional data. Thus our paper present its design and implementation from data management, computation and exploration aspects.
+	   In our case studies, we demonstrate that AVIST can help analysts gain insights,  generate and verify hypotheses.  
+	
+	\item \textit{Vertical Scaling vs Horizontal Scaling}:
+	Performance is a key concern for design big data VA systems. Parallelization is a choice to reduce performance overhead and scale to larger datasets. In this paper, we emphasize the performance gains on a single computer. Thus fully exploiting the GPU resources is our design goal. And our GPU-centric design is constrained by the limited resource of a single node. To handle even bigger datasets, distributed system need be considered. However, distributed systems are designed for long batch jobs. Even they switch the focus to interactive analysis tasks, and redesign distributed frameworks, such as Spark~\cite{Zaharia:2010}. However, these distributed systems are analytical driven, which emphasize on scaling data mining and machine learning from small data into big, rather than exploring the datasets. In our paper, we try to utilize the GPU resources in one computer node to interactively visual exploration of big data, which focus on one computer resource rather than multiple computers.  
+
+	
+ 
+	
+\end{itemize}

@@ -1,0 +1,21 @@
+\firstsection{Introduction}
+
+\maketitle
+
+
+The motivation of this paper is exploratory visual analysis of big datasets.  With the rapid growth of the amount of data,  visual exploration becomes a key component to gain insights from the massive datasets. To make sense of big data, exploratory visual analysis needs to emphasize three aspects. Firstly, a flexible data filtering method, such as cross-filtering~\cite{ weaver2008, weaver2010} is a need for an analyst to ``prune" very large datasets to gain buried relationships. Secondly, fine data details should be provided on demand, so that analysts can capture any subtle abnormal activities. Lastly, exploration data analysis is usually an interactive and iterative process. Thus high performance is necessary for exploration of big data, which requires real-time frame-rates. For example, a cyber security analyst wants to identify the initial attack from millions of records. He or she should filter data records by trying different data attributes iteratively to narrow down the possible records.  
+
+However, there are many challenges to achieve these goals for analyzing big data.
+ When the data becomes bigger, it cannot feed into memory or the computation speed cannot afford real-time performance. In order to feed more data into memory, Tableau~\cite{tab} highlights the Tableau Data Engine (TDE)~\cite{Wesley}. The TDE is a specialized column-oriented format, which has high data compression ratio (considering the repeating values in the columns) and can provide high level data aggregation information. To achieve fast visual querying of big data, imMens~\cite{2013-immens} utilizes the GPU parallel computing to improve performance. Firstly, it aggregates data into data tiles by data cube technique. Secondly, it uses WebGL for data processing and rendering on the GPU. However, both Tableau and imMens only consider visual exploring the high level data aggregation information of big data. To flexibly investigate fine-grained data details, such as identifying buried data relationships by complexity filtering, those methods cannot directly be applied, and new techniques need to be investigated.   
+
+This paper tackles the visual exploration of big data problem,  and aims to help analysts  get the fine-grained details by exploratory visual analysis of big datasets. To achieve this, we propose an animated visualization tool - AVIST, which runs on a  commodity desktop computer for analyzing millions of multi-dimensional data records per second by leveraging the GPU resources. We emphasize ``\textit{animation}" in the context of time-series multidimensional datasets for identifying data temporal behaviors. The performance of AVIST is judged by FPS (frame per second), which emphasizes the high velocity feature. In summary, our key contributions in this paper as follows:
+
+1) We propose a GPU-centric design for interactive visual exploration of big datasets, which emphasizes that data storage and computation are done by the GPU.
+
+2) We design a data dependency graph for characterizing data transformations on the GPU, which supports data aggregation and visualization on demand.
+
+3) We implement  AVIST following the GPU-centric design as a proof of concept. AVIST emphasizes  the  animation and cross-filtering interactions for slicing big data into small, and the GPU parallel computing for transforming raw data into visual primitives. 
+
+4) We present two usage scenarios to demonstrate that  AVIST can help analysts identifying abnormal behaviors of large network flow and inferring new hypotheses for international trade transactions.     
+
+

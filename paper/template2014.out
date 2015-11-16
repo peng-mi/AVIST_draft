@@ -1,0 +1,28 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.2}{Related Work}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{The Exploration of Multidimensional Datasets}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{Big Data Management}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{The GPU Acceleration}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.4}{Big Data Exploration}{section.2}% 6
+\BOOKMARK [1][-]{section.3}{The GPU-Centric Design}{}% 7
+\BOOKMARK [2][-]{subsection.3.1}{Design Principle}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.2}{The GPU-Centric Design}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.3}{Data Storage}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.4}{Data Computation}{section.3}% 11
+\BOOKMARK [1][-]{section.4}{AVIST}{}% 12
+\BOOKMARK [2][-]{subsection.4.1}{MVC Pattern}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.2}{Data Transformation}{section.4}% 14
+\BOOKMARK [3][-]{subsubsection.4.2.1}{Data filtering}{subsection.4.2}% 15
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Data processing}{subsection.4.2}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Data rendering}{subsection.4.2}% 17
+\BOOKMARK [2][-]{subsection.4.3}{Correlated Data Views}{section.4}% 18
+\BOOKMARK [2][-]{subsection.4.4}{User Interactions}{section.4}% 19
+\BOOKMARK [3][-]{subsubsection.4.4.1}{Animation}{subsection.4.4}% 20
+\BOOKMARK [3][-]{subsubsection.4.4.2}{Filtering}{subsection.4.4}% 21
+\BOOKMARK [3][-]{subsubsection.4.4.3}{Capacities}{subsection.4.4}% 22
+\BOOKMARK [1][-]{section.5}{Performance}{}% 23
+\BOOKMARK [1][-]{section.6}{Usage Scenario}{}% 24
+\BOOKMARK [2][-]{subsection.6.1}{Network Flow Analysis}{section.6}% 25
+\BOOKMARK [2][-]{subsection.6.2}{International Trade Analysis}{section.6}% 26
+\BOOKMARK [1][-]{section.7}{Lessons Learned}{}% 27
+\BOOKMARK [1][-]{section.8}{Conclusions}{}% 28
