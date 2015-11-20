@@ -1,6 +1,6 @@
 \section{AVIST}
 We implemented an animated visualization tool (AVIST) based on the GPU-centric design.
-AVIST is written in C++, its computation codes are based on CUDA 7.5 and visualization codes are based on OpenGL and GLSL. The interface are coded by wxWidgets. We use the Thrust library\footnote{https://developer.nvidia.com/Thrust} for accelerating sort, scan, transform and reduction operations.
+AVIST is written in C++, its computation codes are based on CUDA 7.5 and visualization codes are based on OpenGL and GLSL. The interface are coded by wxWidgets. We use the Thrust library\footnote{https://developer.nvidia.com/Thrust} for accelerating sorting, scaning, and reduction operations.
 
  
 
@@ -19,7 +19,7 @@ The codes organization of AVIST follows the Model-View-Controller (MVC) design p
 \end{figure}    
 
 
-The MVC design pattern has several benefits. 1) We separate filters, data and views, which makes AVIST flexible to extend more filters, data transformations and data views in future.  2) The model part is implemented on the GPU, which highlights the GPU-centric design. 3) The cross-filter design pattern can easily be  applied. User interactions of one data view can update the filters, which triggers the data transforms and updates other data views.
+The MVC design pattern has several benefits. 1) We separate filters, data and views, which makes AVIST flexible to extend more filters, data transformations and data views in the future.  2) The model part is implemented on the GPU, which highlights the GPU-centric design. 3) The cross-filter design pattern can easily be  applied. User interactions of one data view can update the filters, which triggers the data transformations and updates other data views.
 
 
 \subsection{Data Transformation}
@@ -70,12 +70,12 @@ Figure~\ref{fig:dataTran2} demonstrates data transformation of histogram and dyn
 	\item Get Y position of each unique value based on previous maximum frequency.
 \end{enumerate}	
 
-Data transformations of  time-series view is straightforward: the GPU counts the number of  filtered data items, then transform it to height value (based on previous maximum value). 
+Data transformations of  time-series view is straightforward: the GPU counts the number of  filtered data items, then transforms it to height value (based on previous maximum value). 
 
 Data transformations of parallel coordinate plots (PCPs) are more complex than other views. After the GPU generates PCPs compact items based on chosen axes, the data flow is separated into two parts as shown in Figure~\ref{fig:dataTran3}. The steps for generating vertex of PCPs:
 \begin{enumerate}[noitemsep]
-	\item  Sort each column to obtain unique values.
-	\item Compact each column unique values into \textit{vertex} array with their size \textit{offset} array.
+	\item  Sort  columns to obtain unique values.
+	\item Compact  columns' unique values into \textit{vertex} array with their size \textit{offset} array.
 	\item Generate Y-axis positions based on the data dimensions' range, and X-axis positions based on the axis chosen order. 
 \end{enumerate}
 
@@ -86,7 +86,7 @@ The steps for generating edge list of PCPs are as follows:
 	$dummyValue = value_{columnA}*range_{columnA} + value_{columnB}$
 	
 	\item  Sort \textit{Edge ID} lists to obtain unique values.
-	\item Compact each list unique values into \textit{edge} array with their size \textit{offset} array.
+	\item Compact each list's unique values into \textit{edge} array with their size \textit{offset} array.
 	\item Split \textit{edge} array into two arrays with vertex values of their columns.
 	\item Replace vertex values with their orders based on \textit{vertex} array.
 	
@@ -97,7 +97,7 @@ The lines are Bezier curves, which are generated based on virtual globe size and
 
 
 \subsubsection{Data rendering}
-After generated visual primitives, AVIST maps them into the GPU vertex buffer objects. The  GPU VBOs offer substantial performance gains and avoids data transformations between main memory and GPU memory.
+After generating visual primitives, AVIST maps them into the GPU vertex buffer objects. The  GPU VBOs offer substantial performance gains and avoid data transformations between main memory and GPU memory.
 
 However,  visual primitives in VBOs are vertexes and edges. In order to  generate rectangles, areas or more advanced shapes, we use GLSL for post-processing. For example, we split one vertex into four vertexes to generate rectangles in histogram view. We also transform vertexes into line strip to generate areas in time-series view.
 

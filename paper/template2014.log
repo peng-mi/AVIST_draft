@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  16 NOV 2015 11:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  20 NOV 2015 11:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -483,7 +483,7 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <9> not available
 (./tex/avist.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
- <pic/arch.png, id=156, 517.4532pt x 272.6988pt>
+ <pic/arch.png, id=157, 517.4532pt x 272.6988pt>
 File: pic/arch.png Graphic file (type png)
 
 <use pic/arch.png>
@@ -491,15 +491,12 @@ Package pdftex.def Info: pic/arch.png used on input line 24.
 (pdftex.def)             Requested size: 251.31898pt x 132.446pt.
  [2 <./pic/arch.png>]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 54.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 55.
 
-Underfull \vbox (badness 1314) has occurred while \output is active []
-
-
-<pic/flow-chart.png, id=177, 543.9522pt x 312.6882pt>
+<pic/flow-chart.png, id=178, 543.9522pt x 312.6882pt>
 File: pic/flow-chart.png Graphic file (type png)
  <use pic/flow-chart.png>
-Package pdftex.def Info: pic/flow-chart.png used on input line 71.
+Package pdftex.def Info: pic/flow-chart.png used on input line 72.
 (pdftex.def)             Requested size: 251.31898pt x 144.47289pt.
 ) (./tex/sys.tex [3 <./pic/flow-chart.png>]
 <pic/mvc.png, id=192, 1449.415pt x 714.67pt>
@@ -526,15 +523,15 @@ File: pic/trans3.pdf Graphic file (type pdf)
 Package pdftex.def Info: pic/trans3.pdf used on input line 59.
 (pdftex.def)             Requested size: 251.31898pt x 174.1244pt.
  [4 <./pic/mvc.png> <./pic/trans.pdf> <./pic/tran2.pdf>]
-<pic/control.pdf, id=381, 598.235pt x 298.11375pt>
+<pic/control.pdf, id=385, 598.235pt x 298.11375pt>
 File: pic/control.pdf Graphic file (type pdf)
  <use pic/control.pdf>
 Package pdftex.def Info: pic/control.pdf used on input line 129.
 (pdftex.def)             Requested size: 251.31898pt x 125.23875pt.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 133.
-
-[5 <./pic/trans3.pdf> <./pic/control.pdf>]) (./tex/perf.tex
+)
+(./tex/perf.tex [5 <./pic/trans3.pdf> <./pic/control.pdf>]
 <pic/perf.png, id=433, 857.45343pt x 526.96875pt>
 File: pic/perf.png Graphic file (type png)
  <use pic/perf.png>
@@ -560,7 +557,7 @@ File: pic/worldtrade2.png Graphic file (type png)
 Package pdftex.def Info: pic/worldtrade2.png used on input line 22.
 (pdftex.def)             Requested size: 514.92374pt x 297.68459pt.
  [6 <./pic/perf.png> <./pic/cmp.png>])
-(./tex/discussion.tex [7 <./pic/network2.png>]) (./tex/conclusion.tex)
+(./tex/discussion.tex) (./tex/conclusion.tex [7 <./pic/network2.png>])
 (./template2014.bbl
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -580,11 +577,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 227.
 Here is how much of TeX's memory you used:
  6594 strings out of 493089
  97660 string characters out of 6134842
- 195239 words of memory out of 5000000
+ 195262 words of memory out of 5000000
  9827 multiletter control sequences out of 15000+600000
  51762 words of font info for 96 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,15n,29p,1566b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,15n,29p,1566b,449s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
 exlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/tex
 live/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texl
@@ -596,7 +593,7 @@ nts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/
 urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/
 utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pf
 b>
-Output written on template2014.pdf (9 pages, 2102697 bytes).
+Output written on template2014.pdf (9 pages, 2103602 bytes).
 PDF statistics:
  532 PDF objects out of 1000 (max. 8388607)
  421 compressed objects within 5 object streams
